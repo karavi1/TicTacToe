@@ -1,11 +1,10 @@
-class Board():
+class Board:
 
     def __init__(self):
-        self.board = [None] * 9
+        self.grid = [None] * 9
 
     def visualize(self):
-
-        board = self.board
+        board = self.grid
         for i in range(len(board)):
             if board[i] is None:
                 board[i] = " "
@@ -14,12 +13,15 @@ class Board():
         print(str(board[3]) + "|" + str(board[4]) + "|" + str(board[5]))
         print("-----")
         print(str(board[6]) + "|" + str(board[7]) + "|" + str(board[8]))
+        for i in range(len(board)):
+            if board[i] is " ":
+                board[i] = None
 
     def position_visualize(self):
         updated = [None] * 9
         for i in range(9):
-            if self.board[i] == "X" or self.board[i] == "O":
-                updated[i] = self.board[i]
+            if self.grid[i] == "X" or self.grid[i] == "O":
+                updated[i] = self.grid[i]
             else:
                 updated[i] = i
         board = updated
@@ -33,8 +35,3 @@ class Board():
         test = Board()
         test.visualize()
         test.position_visualize()
-
-b = Board()
-b.test()
-
-
