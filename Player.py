@@ -44,3 +44,6 @@ def main():
     b = Board.Board()
     p1 = Player(b, 'x')
     p2 = Player(b, 'o')
+
+def dummy():
+    print("1")
